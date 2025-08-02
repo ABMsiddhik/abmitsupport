@@ -1,0 +1,1528 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="ABM IT Support is a leading web design and development company in Pudukkottai and Trichy. We offer IT solutions, app development, digital marketing, SEO services and more across India and globally." />
+  <meta name="keywords"
+    content="Web Design Pudukkottai, Web Development Trichy, ABM IT Support, SEO Pudukkottai, App Development Tamilnadu, IT Solutions India" />
+  <meta name="author" content="ABM IT SUPPORT Pvt Ltd" />
+  <title>ABM IT Support | Web Design & IT Services in Pudukkottai</title>
+  <link rel="canonical" href="https://www.abmitsupport.com/" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="shortcut icon" href="./images/favicon.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .swiper {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide-overlay {
+      background-color: rgba(0, 0, 0, 0.5);
+      transition: opacity 0.5s ease;
+    }
+
+    .slide-content {
+      transform: translateY(20px);
+      opacity: 0;
+      transition: all 0.5s ease;
+    }
+
+    .swiper-slide-active .slide-content {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      background-color: rgba(255, 255, 255, 0.2);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+
+    .swiper-button-next:hover,
+    .swiper-button-prev:hover {
+      background-color: rgba(255, 255, 255, 0.4);
+    }
+
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+      font-size: 1.5rem;
+      color: white;
+    }
+
+    .swiper-pagination-bullet {
+      background: white;
+      opacity: 0.5;
+      width: 12px;
+      height: 12px;
+      transition: all 0.3s ease;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: #2563eb;
+      opacity: 1;
+      transform: scale(1.2);
+    }
+
+    .nav-link {
+      position: relative;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: #2563eb;
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      display: block;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .cta-button {
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    .social-icon {
+      transition: all 0.3s ease;
+    }
+
+    .social-icon:hover {
+      transform: translateY(-3px);
+    }
+
+    .slide-button {
+      transition: all 0.3s ease;
+    }
+
+    .slide-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+    }
+
+    .service-card {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      background: linear-gradient(to bottom, #1e40af, #1e3a8a);
+      color: white;
+    }
+
+    .service-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background-color: #3b82f6;
+      transition: width 0.3s ease;
+    }
+
+    .service-card:hover::after {
+      width: 100%;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+    }
+
+    .service-content {
+      opacity: 0.95;
+      transition: opacity 0.3s ease;
+    }
+
+    .service-card:hover .service-content {
+      opacity: 1;
+    }
+
+    #moreServices {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease-out;
+    }
+
+    #moreServices.show {
+      max-height: 1000px;
+    }
+
+    .tab-button {
+      transition: all 0.3s ease;
+    }
+
+    .tab-button:hover {
+      background-color: rgba(37, 99, 235, 0.1);
+    }
+
+    .tab-button.active {
+      background-color: #2563eb;
+      color: white;
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+    }
+
+    .accordion.active .accordion-content {
+      max-height: 300px;
+    }
+
+    .accordion.active .icon_fq {
+      transform: rotate(90deg);
+    }
+
+    .image-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(30, 58, 138, 0.8);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      border-radius: 0.5rem;
+    }
+
+    .image-one-wrapper:hover .image-overlay,
+    .image-two-wrapper:hover .image-overlay {
+      opacity: 1;
+    }
+
+    .overlay-icon {
+      font-size: 1.5rem;
+      color: white;
+    }
+
+    .image-badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: white;
+      color: #1e40af;
+      padding: 0.5rem 1rem;
+      border-radius: 2rem;
+      font-weight: 600;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .br_left_3px_theme_color {
+      border-left: 3px solid #3b82f6;
+    }
+
+    @media (max-width: 768px) {
+      .hero-section {
+        height: 400px;
+      }
+
+      .slide-content {
+        width: 90% !important;
+        padding: 1.5rem !important;
+      }
+
+      .swiper-button-next,
+      .swiper-button-prev {
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero-section {
+        height: 350px;
+      }
+
+      .slide-content h2 {
+        font-size: 1.5rem !important;
+      }
+
+      .top-bar {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0.75rem 1rem;
+      }
+
+      .top-bar div {
+        justify-content: center;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body class="font-sans bg-gray-50">
+
+  <!-- Top Bar - Increased height and font size -->
+  <div
+    class="hidden md:flex bg-blue-900 text-white text-base px-6 py-3 flex justify-between items-center flex-wrap top-bar">
+    <div class="flex items-center space-x-6">
+      <span><i class="far fa-clock mr-2"></i> Working Hours: Mon – Sat, 9am – 8pm</span>
+      <a href="tel:+918012626111" class="text-cyan-300 font-medium hover:underline">
+        <i class="fas fa-phone-alt mr-2"></i> +91 8012626111
+      </a>
+    </div>
+
+    <!-- Social Icons -->
+    <div class="flex space-x-3 mt-2 md:mt-0">
+      <a href="https://www.facebook.com/abmitsupport" target="_blank"
+        class="w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300 social-icon">
+        <i class="fab fa-facebook-f text-white text-sm"></i>
+      </a>
+      <a href="https://x.com/abmitsupport" target="_blank"
+        class="w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300 social-icon">
+        <i class="fab fa-x-twitter text-white text-sm"></i>
+      </a>
+      <a href="https://www.linkedin.com/company/abmitsupport/" target="_blank"
+        class="w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300 social-icon">
+        <i class="fab fa-linkedin-in text-white text-sm"></i>
+      </a>
+      <a href="https://www.instagram.com/abmitsupport/" target="_blank"
+        class="w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300 social-icon">
+        <i class="fab fa-instagram text-white text-sm"></i>
+      </a>
+      <a href="https://www.youtube.com/@abmitsupport" target="_blank"
+        class="w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300 social-icon">
+        <i class="fab fa-youtube text-white text-sm"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- Navbar - Increased height and font size -->
+  <nav class="bg-white shadow-md sticky top-0 z-50 py-4">
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <!-- Logo -->
+      <div class="flex items-center space-x-3">
+        <img src="./images/abm-it-support-dark-logo.png" alt="ABM IT Support Logo" class="h-12">
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button class="md:hidden text-gray-700 focus:outline-none" id="mobile-menu-button">
+        <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+
+      <!-- Nav Links - Increased font size -->
+      <ul class="hidden md:flex items-center space-x-8 text-base font-medium text-gray-700">
+        <li><a href="#" class="hover:text-blue-600 nav-link">Home</a></li>
+        <li><a href="#" class="hover:text-blue-600 nav-link">About</a></li>
+
+        <!-- Services Dropdown -->
+        <li class="relative dropdown group">
+          <a href="#" class="hover:text-blue-600 nav-link flex items-center">Services <i
+              class="fas fa-chevron-down ml-1 text-sm"></i></a>
+          <ul class="absolute hidden dropdown-menu bg-white border rounded-lg shadow-lg py-2 w-48 z-10 text-gray-800">
+            <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200">IT Solutions</a>
+            </li>
+            <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200">Web Development</a>
+            </li>
+            <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200">Web Design</a></li>
+            <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200">Digital
+                Marketing</a></li>
+            <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200">App Development</a>
+            </li>
+            <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200">SMS & WhatsApp</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="#" class="hover:text-blue-600 nav-link">Courses</a></li>
+        <li><a href="#" class="hover:text-blue-600 nav-link">Internships</a></li>
+        <li><a href="#" class="hover:text-blue-600 nav-link">Contact</a></li>
+      </ul>
+
+      <!-- CTA Button - Increased size -->
+      <a href="#"
+        class="hidden md:block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 text-base cta-button">Get A
+        Quote</a>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="md:hidden hidden bg-white w-full py-3 px-6 shadow-lg" id="mobile-menu">
+      <a href="#" class="block py-3 text-gray-700 hover:text-blue-600 text-base">Home</a>
+      <a href="#" class="block py-3 text-gray-700 hover:text-blue-600 text-base">About</a>
+      <div class="py-3">
+        <button class="flex items-center justify-between w-full text-gray-700 hover:text-blue-600 text-base"
+          id="services-toggle">
+          Services <i class="fas fa-chevron-down text-sm"></i>
+        </button>
+        <div class="hidden pl-4 mt-2" id="services-dropdown">
+          <a href="#" class="block py-2 text-gray-700 hover:text-blue-600 text-base">IT Solutions</a>
+          <a href="#" class="block py-2 text-gray-700 hover:text-blue-600 text-base">Web Development</a>
+          <a href="#" class="block py-2 text-gray-700 hover:text-blue-600 text-base">Web Design</a>
+          <a href="#" class="block py-2 text-gray-700 hover:text-blue-600 text-base">Digital Marketing</a>
+          <a href="#" class="block py-2 text-gray-700 hover:text-blue-600 text-base">App Development</a>
+          <a href="#" class="block py-2 text-gray-700 hover:text-blue-600 text-base">SMS & WhatsApp</a>
+        </div>
+      </div>
+      <a href="#" class="block py-3 text-gray-700 hover:text-blue-600 text-base">Courses</a>
+      <a href="#" class="block py-3 text-gray-700 hover:text-blue-600 text-base">Internships</a>
+      <a href="#" class="block py-3 text-gray-700 hover:text-blue-600 text-base">Contact</a>
+      <a href="#"
+        class="block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 text-base mt-3 text-center cta-button">Get
+        A Quote</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section with Swiper Slider -->
+  <section class="relative w-full h-[100vh] hero-section">
+    <div class="swiper mySwiper w-full h-full">
+      <div class="swiper-wrapper">
+
+        <!-- Slide 1 - IT Solutions -->
+        <div class="swiper-slide relative bg-cover bg-center flex items-center justify-center md:justify-start"
+          style="background-image: url('./images/it-solutions-services-abm-it-support.png');">
+          <div class="swiper-slide-overlay absolute inset-0"></div>
+          <div
+            class="slide-content bg-blue-600 text-white p-8 rounded-2xl mx-4 md:m-6 w-full md:w-1/2 lg:w-1/3 max-w-md shadow-lg z-10">
+            <p class="text-sm mb-2 font-medium text-blue-100">Comprehensive IT Services</p>
+            <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 leading-tight">Complete IT Solutions For Your
+              Business</h2>
+            <p class="mb-4 text-sm text-blue-100">Web hosting, domain management, CMS, CRM and more to power your
+              digital presence.</p>
+            <button class="slide-button bg-white text-blue-700 px-5 py-2 rounded hover:bg-gray-100 font-medium">Explore
+              IT Solutions</button>
+          </div>
+        </div>
+
+        <!-- Slide 2 - Web Development -->
+        <div class="swiper-slide relative bg-cover bg-center flex items-center justify-center md:justify-start"
+          style="background-image: url('./images/web-development-services-abm-it-support.jpg');">
+          <div class="swiper-slide-overlay absolute inset-0"></div>
+          <div
+            class="slide-content bg-blue-600 text-white p-8 rounded-2xl mx-4 md:m-6 w-full md:w-1/2 lg:w-1/3 max-w-md shadow-lg z-10">
+            <p class="text-sm mb-2 font-medium text-blue-100">Custom Web Solutions</p>
+            <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 leading-tight">Professional Web Development
+              Services</h2>
+            <p class="mb-4 text-sm text-blue-100">From static sites to complex e-commerce platforms - we build websites
+              that work.</p>
+            <button class="slide-button bg-white text-blue-700 px-5 py-2 rounded hover:bg-gray-100 font-medium">View Web
+              Services</button>
+          </div>
+        </div>
+
+        <!-- Slide 3 - Digital Marketing -->
+        <div class="swiper-slide relative bg-cover bg-center flex items-center justify-center md:justify-start"
+          style="background-image: url('./images/digital-marketing-agency-abm-it-support.jpg');">
+          <div class="swiper-slide-overlay absolute inset-0"></div>
+          <div
+            class="slide-content bg-blue-600 text-white p-8 rounded-2xl mx-4 md:m-6 w-full md:w-1/2 lg:w-1/3 max-w-md shadow-lg z-10">
+            <p class="text-sm mb-2 font-medium text-blue-100">Grow Your Business Online</p>
+            <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 leading-tight">Result-Driven Digital Marketing
+            </h2>
+            <p class="mb-4 text-sm text-blue-100">SEO, social media, PPC and more to increase your online visibility and
+              leads.</p>
+            <button class="slide-button bg-white text-blue-700 px-5 py-2 rounded hover:bg-gray-100 font-medium">Boost
+              Your Marketing</button>
+          </div>
+        </div>
+
+        <!-- Slide 4 - App Development -->
+        <div class="swiper-slide relative bg-cover bg-center flex items-center justify-center md:justify-start"
+          style="background-image: url('./images/app-development-services-abm-it-support.jpg');">
+          <div class="swiper-slide-overlay absolute inset-0"></div>
+          <div
+            class="slide-content bg-blue-600 text-white p-8 rounded-2xl mx-4 md:m-6 w-full md:w-1/2 lg:w-1/3 max-w-md shadow-lg z-10">
+            <p class="text-sm mb-2 font-medium text-blue-100">Mobile & Web Apps</p>
+            <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 leading-tight">Custom App Development</h2>
+            <p class="mb-4 text-sm text-blue-100">Transform your ideas into powerful mobile and web applications.</p>
+            <button class="slide-button bg-white text-blue-700 px-5 py-2 rounded hover:bg-gray-100 font-medium">Build
+              Your App</button>
+          </div>
+        </div>
+
+        <!-- Slide 5 - SMS/WhatsApp -->
+        <div class="swiper-slide relative bg-cover bg-center flex items-center justify-center md:justify-start"
+          style="background-image: url('./images/sms-whatsapp-marketing-abm-it-support.jpg');">
+          <div class="swiper-slide-overlay absolute inset-0"></div>
+          <div
+            class="slide-content bg-blue-600 text-white p-8 rounded-2xl mx-4 md:m-6 w-full md:w-1/2 lg:w-1/3 max-w-md shadow-lg z-10">
+            <p class="text-sm mb-2 font-medium text-blue-100">Business Communication</p>
+            <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 leading-tight">Bulk SMS & WhatsApp Solutions</h2>
+            <p class="mb-4 text-sm text-blue-100">Powerful messaging services to connect with your customers
+              effectively.</p>
+            <button class="slide-button bg-white text-blue-700 px-5 py-2 rounded hover:bg-gray-100 font-medium">Explore
+              Messaging</button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Swiper Arrows -->
+      <div class="swiper-button-next text-white"></div>
+      <div class="swiper-button-prev text-white"></div>
+
+      <!-- Swiper Pagination (optional) -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </section>
+
+  <!-- Services Section - Updated with subtle border and no icon scaling -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-8">
+        <div class="md:w-1/2">
+          <span class="block text-blue-600 text-sm font-semibold uppercase tracking-wider mb-3">Innovative Technology
+            Solutions</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Transform Your Digital Presence</h2>
+          <div class="flex items-center mb-6">
+            <div class="w-10 h-0.5 bg-blue-600"></div>
+            <div class="w-3 h-3 rounded-full bg-purple-600 mx-3"></div>
+            <div class="w-10 h-0.5 bg-blue-600"></div>
+          </div>
+        </div>
+        <div class="md:w-1/2">
+          <p class="text-gray-600 leading-relaxed">We deliver cutting-edge digital solutions designed to elevate your
+            business through strategic technology implementation and innovative design.</p>
+        </div>
+      </div>
+
+      <!-- Service Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- IT Infrastructure Card -->
+        <div
+          class="group relative bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+          <div class="relative h-56 overflow-hidden">
+            <img src="./images/abm-complete-it-infrastructure.jpg"
+              alt="Complete IT Infrastructure Services including web hosting, domain registration, and CMS solutions"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+            <div class="absolute top-4 right-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">15+
+              Services</div>
+            <div
+              class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-0 group-hover:opacity-70 transition-opacity duration-300">
+            </div>
+          </div>
+          <div class="p-6 relative">
+            <div class="text-blue-600 text-4xl mb-5 transition-colors duration-300 group-hover:text-purple-600">
+              <i class="fas fa-server"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-4 transition-colors duration-300 group-hover:text-blue-600">
+              Complete IT Infrastructure</h3>
+            <div class="flex flex-wrap gap-2 mb-5">
+              <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Web Hosting</span>
+              <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Domain Services</span>
+              <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">CMS/CRM</span>
+            </div>
+            <a href="#"
+              class="inline-flex items-center text-blue-600 font-medium hover:text-blue-800 transition-colors">
+              Discover Solutions
+              <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+            </a>
+          </div>
+          <!-- Subtle Border Effects -->
+          <div class="absolute inset-0 rounded-xl pointer-events-none overflow-hidden">
+            <span
+              class="absolute top-0 left-0 w-0 h-px bg-blue-600 transition-all duration-500 group-hover:w-full"></span>
+            <span
+              class="absolute top-0 right-0 w-px h-0 bg-blue-600 transition-all duration-500 group-hover:h-full"></span>
+            <span
+              class="absolute bottom-0 right-0 w-0 h-px bg-blue-600 transition-all duration-500 group-hover:w-full"></span>
+            <span
+              class="absolute bottom-0 left-0 w-px h-0 bg-blue-600 transition-all duration-500 group-hover:h-full"></span>
+          </div>
+        </div>
+
+        <!-- Digital Growth Card -->
+        <div
+          class="group relative bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+          <div class="relative h-56 overflow-hidden">
+            <img src="./images/abm-digital-growth-solutions.jpg"
+              alt="Digital Growth Solutions including web development, design, and marketing services"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+            <div class="absolute top-4 right-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">10+
+              Services</div>
+            <div
+              class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-0 group-hover:opacity-70 transition-opacity duration-300">
+            </div>
+          </div>
+          <div class="p-6 relative">
+            <div class="text-blue-600 text-4xl mb-5 transition-colors duration-300 group-hover:text-purple-600">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-4 transition-colors duration-300 group-hover:text-blue-600">
+              Digital Growth Solutions</h3>
+            <div class="flex flex-wrap gap-2 mb-5">
+              <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Web Development</span>
+              <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Web Design</span>
+              <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Digital Marketing</span>
+            </div>
+            <a href="#"
+              class="inline-flex items-center text-blue-600 font-medium hover:text-blue-800 transition-colors">
+              Discover Solutions
+              <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+            </a>
+          </div>
+          <!-- Subtle Border Effects -->
+          <div class="absolute inset-0 rounded-xl pointer-events-none overflow-hidden">
+            <span
+              class="absolute top-0 left-0 w-0 h-px bg-blue-600 transition-all duration-500 group-hover:w-full"></span>
+            <span
+              class="absolute top-0 right-0 w-px h-0 bg-blue-600 transition-all duration-500 group-hover:h-full"></span>
+            <span
+              class="absolute bottom-0 right-0 w-0 h-px bg-blue-600 transition-all duration-500 group-hover:w-full"></span>
+            <span
+              class="absolute bottom-0 left-0 w-px h-0 bg-blue-600 transition-all duration-500 group-hover:h-full"></span>
+          </div>
+        </div>
+
+        <!-- Communication Tech Card -->
+        <div
+          class="group relative bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+          <div class="relative h-56 overflow-hidden">
+            <img src="./images/abm-smart-communication-tech.jpg"
+              alt="Smart Communication Technology including app development and messaging services"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+            <div class="absolute top-4 right-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">5+
+              Services</div>
+            <div
+              class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-0 group-hover:opacity-70 transition-opacity duration-300">
+            </div>
+          </div>
+          <div class="p-6 relative">
+            <div class="text-blue-600 text-4xl mb-5 transition-colors duration-300 group-hover:text-purple-600">
+              <i class="fas fa-comments"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-4 transition-colors duration-300 group-hover:text-blue-600">
+              Smart Communication Tech</h3>
+            <div class="flex flex-wrap gap-2 mb-5">
+              <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">App Development</span>
+              <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Bulk SMS</span>
+              <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">WhatsApp API</span>
+            </div>
+            <a href="#"
+              class="inline-flex items-center text-blue-600 font-medium hover:text-blue-800 transition-colors">
+              Discover Solutions
+              <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+            </a>
+          </div>
+          <!-- Subtle Border Effects -->
+          <div class="absolute inset-0 rounded-xl pointer-events-none overflow-hidden">
+            <span
+              class="absolute top-0 left-0 w-0 h-px bg-blue-600 transition-all duration-500 group-hover:w-full"></span>
+            <span
+              class="absolute top-0 right-0 w-px h-0 bg-blue-600 transition-all duration-500 group-hover:h-full"></span>
+            <span
+              class="absolute bottom-0 right-0 w-0 h-px bg-blue-600 transition-all duration-500 group-hover:w-full"></span>
+            <span
+              class="absolute bottom-0 left-0 w-px h-0 bg-blue-600 transition-all duration-500 group-hover:h-full"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="relative py-16 bg-cover bg-center bg-no-repeat"
+    style="background-image: url('./images/abm-about-section-technology-background.jpg');">
+    <div class="absolute inset-0 bg-white/50 backdrop-blur-sm z-0"></div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="flex flex-col lg:flex-row items-start">
+        <!-- Image Column -->
+        <div class="lg:w-5/12 mb-8 lg:mb-0 lg:pr-8">
+          <img src="./images/abm-it-support-ceo.png" class="w-full rounded-lg shadow-md" alt="About ABM IT Support">
+        </div>
+
+        <!-- Content Column -->
+        <div class="lg:w-7/12 lg:pl-8">
+          <div>
+            <span class="text-blue-600 text-sm font-semibold uppercase tracking-wider">About Company</span>
+            <h2 class="text-3xl font-bold text-gray-800 mt-2 mb-6">We're a Trusted and Professional Web Design Company
+            </h2>
+          </div>
+
+          <!-- Tabs -->
+          <div class="mb-8">
+            <div class="flex flex-wrap border-b border-gray-200">
+              <button class="tab-button px-4 py-2 text-sm font-medium rounded-t-lg mr-2 active" data-tab="about">
+                About Us <i class="fas fa-arrow-right ml-1 text-xs"></i>
+              </button>
+              <button class="tab-button px-4 py-2 text-sm font-medium rounded-t-lg mr-2" data-tab="mission">
+                Mission <i class="fas fa-arrow-right ml-1 text-xs"></i>
+              </button>
+              <button class="tab-button px-4 py-2 text-sm font-medium rounded-t-lg" data-tab="vision">
+                Vision <i class="fas fa-arrow-right ml-1 text-xs"></i>
+              </button>
+            </div>
+
+            <!-- Tab Content -->
+            <div class="pt-6">
+              <!-- About Us Tab -->
+              <div class="tab-content active" id="about-content">
+                <p class="text-gray-600 mb-6">
+                  ABM IT SUPPORT (Pvt) Ltd, since 2015, is the premier web designing company in Tamilnadu, India.
+                  Recognized in India and the UK, we are entering the global market to dominate with our innovative web
+                  solutions. Our creative and strategic web designs use the latest technologies to deliver
+                  cost-effective, timely, and value-added services tailored to your business needs.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                  <div class="flex items-start">
+                    <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                    <span>Premier Web Design Company</span>
+                  </div>
+                  <div class="flex items-start">
+                    <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                    <span>Innovative & SEO-Friendly Solutions</span>
+                  </div>
+                  <div class="flex items-start">
+                    <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                    <span>Cost-Effective & Timely Delivery</span>
+                  </div>
+                  <div class="flex items-start">
+                    <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                    <span>Responsive & Mobile-Friendly Designs</span>
+                  </div>
+                  <div class="flex items-start">
+                    <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                    <span>Free Consultation & Customization</span>
+                  </div>
+                  <div class="flex items-start">
+                    <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                    <span>Detailed Analysis & Bug-Free Delivery</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Mission Tab -->
+              <div class="tab-content hidden" id="mission-content">
+                <p class="text-gray-600 mb-6">
+                  Our mission is to achieve a stable identity in delivering highly qualified services and adding value
+                  to our clients through proactivity, transparent communication, and on-time project delivery with
+                  outstanding performance. We aim to maintain the highest levels of knowledge, honesty, and trust in our
+                  relationships with clients, employees, and members.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                  <div class="flex items-start">
+                    <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                    <span>High-Quality Service Delivery</span>
+                  </div>
+                  <div class="flex items-start">
+                    <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                    <span>Transparent Communication</span>
+                  </div>
+                  <div class="flex items-start">
+                    <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                    <span>On-Time Project Delivery</span>
+                  </div>
+                  <div class="flex items-start">
+                    <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                    <span>Building Trust with Clients</span>
+                  </div>
+                  <div class="flex items-start">
+                    <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                    <span>Outstanding Performance</span>
+                  </div>
+                  <div class="flex items-start">
+                    <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                    <span>Knowledge & Honesty</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Vision Tab -->
+              <div class="tab-content hidden" id="vision-content">
+                <p class="text-gray-600 mb-6">
+                  Our vision serves as the framework guiding every aspect of our business. It drives us to achieve
+                  sustainable success, delivering top-notch quality and fostering growth for both our customers'
+                  businesses and ours. We aim to be the best web design company in India, providing world-class web
+                  services to a global clientele.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                  <div class="flex items-start">
+                    <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                    <span>Sustainable Business Growth</span>
+                  </div>
+                  <div class="flex items-start">
+                    <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                    <span>Top-Notch Quality Services</span>
+                  </div>
+                  <div class="flex items-start">
+                    <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                    <span>Global Web Service Excellence</span>
+                  </div>
+                  <div class="flex items-start">
+                    <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                    <span>Customer Business Growth</span>
+                  </div>
+                  <div class="flex items-start">
+                    <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                    <span>Framework for Success</span>
+                  </div>
+                  <div class="flex items-start">
+                    <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                    <span>Best Web Design in India</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <a href="about.html"
+            class="inline-flex items-center bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-all duration-300">
+            More About Us <i class="fas fa-arrow-right ml-2"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+
+  </section>
+
+  <!-- Services Section -->
+  <section class="relative py-16 bg-blue-900 overflow-hidden">
+    <!-- Wave Pattern Background -->
+    <div class="absolute top-0 left-0 -mt-10 opacity-20 z-0">
+      <img src="./images/top-wave-pattern-it-services-section.png" class="w-full max-w-xs" alt="wave pattern">
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto">
+        <span class="text-blue-300 text-sm font-semibold uppercase tracking-wider">Our Popular Services</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-white mt-2 mb-4">Comprehensive IT Solutions</h2>
+        <div class="flex items-center justify-center mb-8">
+          <div class="w-10 h-0.5 bg-blue-400"></div>
+          <div class="w-3 h-3 rounded-full bg-purple-500 mx-3"></div>
+          <div class="w-10 h-0.5 bg-blue-400"></div>
+        </div>
+      </div>
+
+      <!-- Visible Services (First 3) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- IT Solutions -->
+        <div class="service-card rounded-lg shadow-md h-full flex flex-col">
+          <div class="p-6 flex-grow service-content">
+            <div class="text-blue-300 text-4xl mb-4">
+              <i class="fas fa-server"></i>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">
+              IT Solutions
+            </h3>
+            <p class="text-blue-100 mb-4 flex-grow">
+              Comprehensive IT infrastructure solutions including network setup, cloud services, cybersecurity, and IT
+              consulting for businesses of all sizes...
+            </p>
+            <div class="inline-flex items-center text-blue-300 font-medium hover:text-white transition-colors">
+              Read More <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Web Development -->
+        <div class="service-card rounded-lg shadow-md h-full flex flex-col">
+          <div class="p-6 flex-grow service-content">
+            <div class="text-blue-300 text-4xl mb-4">
+              <i class="fas fa-code"></i>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">
+              Web Development
+            </h3>
+            <p class="text-blue-100 mb-4 flex-grow">
+              Custom website development services including frontend and backend development, e-commerce solutions, CMS
+              integration, and API development...
+            </p>
+            <div class="inline-flex items-center text-blue-300 font-medium hover:text-white transition-colors">
+              Read More <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Web Design -->
+        <div class="service-card rounded-lg shadow-md h-full flex flex-col">
+          <div class="p-6 flex-grow service-content">
+            <div class="text-blue-300 text-4xl mb-4">
+              <i class="fas fa-paint-brush"></i>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">
+              Web Design
+            </h3>
+            <p class="text-blue-100 mb-4 flex-grow">
+              Creative and responsive web design services focusing on user experience, modern aesthetics, brand
+              consistency, and conversion optimization...
+            </p>
+            <div class="inline-flex items-center text-blue-300 font-medium hover:text-white transition-colors">
+              Read More <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Collapsible Additional Services -->
+      <div id="moreServices" class="overflow-hidden transition-all duration-500">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+          <!-- Digital Marketing -->
+          <div class="service-card rounded-lg shadow-md h-full flex flex-col">
+            <div class="p-6 flex-grow service-content">
+              <div class="text-blue-300 text-4xl mb-4">
+                <i class="fas fa-bullhorn"></i>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-3">
+                Digital Marketing
+              </h3>
+              <p class="text-blue-100 mb-4 flex-grow">
+                Full-service digital marketing including SEO, PPC, social media marketing, content marketing, email
+                campaigns, and analytics...
+              </p>
+              <div class="inline-flex items-center text-blue-300 font-medium hover:text-white transition-colors">
+                Read More <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- App Development -->
+          <div class="service-card rounded-lg shadow-md h-full flex flex-col">
+            <div class="p-6 flex-grow service-content">
+              <div class="text-blue-300 text-4xl mb-4">
+                <i class="fas fa-mobile-alt"></i>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-3">
+                App Development
+              </h3>
+              <p class="text-blue-100 mb-4 flex-grow">
+                Custom mobile application development for iOS and Android platforms, including native and cross-platform
+                solutions...
+              </p>
+              <div class="inline-flex items-center text-blue-300 font-medium hover:text-white transition-colors">
+                Read More <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- SMS & WhatsApp -->
+          <div class="service-card rounded-lg shadow-md h-full flex flex-col">
+            <div class="p-6 flex-grow service-content">
+              <div class="text-blue-300 text-4xl mb-4">
+                <i class="fas fa-comment-dots"></i>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-3">
+                SMS & WhatsApp Solutions
+              </h3>
+              <p class="text-blue-100 mb-4 flex-grow">
+                Bulk SMS services, WhatsApp Business API integration, and messaging solutions for marketing and customer
+                engagement...
+              </p>
+              <div class="inline-flex items-center text-blue-300 font-medium hover:text-white transition-colors">
+                Read More <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Load More/Show Less Button -->
+      <div class="text-center mt-8">
+        <button id="toggleServicesBtn"
+          class="bg-white text-blue-700 px-6 py-3 rounded-lg font-medium hover:bg-blue-50 transition-all duration-300 group">
+          <span id="btnText">Load More Services</span>
+          <i class="fas fa-chevron-down ml-2 transition-transform group-hover:translate-y-1" id="btnIcon"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Wave Pattern Bottom -->
+    <div class="absolute bottom-0 right-0 -mb-40 opacity-20 z-0">
+      <img src="assets/images/shape/wave-pattern-1.png" class="w-full max-w-xs" alt="wave pattern">
+    </div>
+  </section>
+  <!-- FAQ Section -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col lg:flex-row items-start gap-8">
+        <!-- Left Column - Content & FAQ -->
+        <div class="lg:w-1/2">
+          <div class="mb-8">
+            <span class="text-blue-600 text-sm font-semibold uppercase tracking-wider">ABM IT SUPPORT</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mt-2">Your Complete IT Solutions Partner Since 2015
+            </h2>
+            <div class="h-1 w-20 bg-blue-600 my-4"></div>
+          </div>
+
+          <div class="pl-4 mb-8 text-gray-600 border-l-4 border-blue-500">
+            Recognized as a leading software company in India and the UK, we deliver exceptional digital solutions that
+            help businesses thrive in the competitive online landscape.
+          </div>
+
+          <!-- FAQ Accordion -->
+          <div class="space-y-4">
+            <!-- FAQ Item 1 -->
+            <div class="accordion border border-gray-200 rounded-lg overflow-hidden transition-all duration-300">
+              <div class="question p-4 bg-white cursor-pointer flex justify-between items-center">
+                <h3 class="text-lg font-medium text-gray-800">What Services Do We Offer?</h3>
+                <span class="icon_fq text-blue-600 transition-transform duration-300">
+                  <i class="fas fa-chevron-right"></i>
+                </span>
+              </div>
+              <div class="accordion-content">
+                <div class="p-4 pt-0 text-gray-600 bg-gray-50">
+                  We provide comprehensive IT solutions including web development, digital marketing, app development,
+                  hosting services, and bulk communication solutions. Our services are tailored to meet your specific
+                  business needs.
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ Item 2 (Active by default) -->
+            <div class="accordion active border border-gray-200 rounded-lg overflow-hidden transition-all duration-300">
+              <div class="question p-4 bg-white cursor-pointer flex justify-between items-center">
+                <h3 class="text-lg font-medium text-gray-800">Why Choose ABM IT Support?</h3>
+                <span class="icon_fq text-blue-600 transition-transform duration-300">
+                  <i class="fas fa-chevron-right"></i>
+                </span>
+              </div>
+              <div class="accordion-content">
+                <div class="p-4 pt-0 text-gray-600 bg-gray-50">
+                  With proven experience since 2015, we deliver world-class solutions at competitive prices. Our
+                  client-centric approach ensures we understand your exact needs before we begin any project.
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ Item 3 -->
+            <div class="accordion border border-gray-200 rounded-lg overflow-hidden transition-all duration-300">
+              <div class="question p-4 bg-white cursor-pointer flex justify-between items-center">
+                <h3 class="text-lg font-medium text-gray-800">How Do We Ensure Quality?</h3>
+                <span class="icon_fq text-blue-600 transition-transform duration-300">
+                  <i class="fas fa-chevron-right"></i>
+                </span>
+              </div>
+              <div class="accordion-content">
+                <div class="p-4 pt-0 text-gray-600 bg-gray-50">
+                  All our solutions are built with SEO in mind, fully responsive across devices, and come with
+                  post-delivery support. We maintain transparency throughout the process with work-in-progress demos.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column - Images -->
+        <div class="lg:w-1/2">
+          <!-- Main Image -->
+          <div class="relative mb-6 rounded-xl overflow-hidden shadow-lg">
+            <img src="./images/abm-digital-marketing-analytics.jpg" alt="Digital Marketing"
+              class="w-full h-auto rounded-xl transition-transform duration-500 hover:scale-105">
+            <div class="image-badge">
+              <i class="fas fa-chart-line me-2"></i> Digital Solutions
+            </div>
+          </div>
+
+          <!-- Smaller Images -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- Team Image -->
+            <div class="relative rounded-xl overflow-hidden shadow-md image-one-wrapper">
+              <img src="./images/abm-it-team-collaboration.jpg" alt="Our Team"
+                class="w-full h-full object-cover rounded-xl transition-transform duration-500 hover:scale-105">
+              <div class="image-overlay">
+                <div class="absolute inset-0 flex flex-col items-center justify-center">
+                  <i class="fas fa-users overlay-icon text-2xl mb-2"></i>
+                  <h5 class="text-white font-medium">Expert Team</h5>
+                </div>
+              </div>
+            </div>
+
+            <!-- Code Image -->
+            <div class="relative rounded-xl overflow-hidden shadow-md image-two-wrapper">
+              <img src="./images/abm-web-development-coding.jpg" alt="Web Development"
+                class="w-full h-full object-cover rounded-xl transition-transform duration-500 hover:scale-105">
+              <div class="image-overlay">
+                <div class="absolute inset-0 flex flex-col items-center justify-center">
+                  <i class="fas fa-code overlay-icon text-2xl mb-2"></i>
+                  <h5 class="text-white font-medium">Quality Code</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="py-16 relative z-10 -mb-24">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="relative overflow-hidden rounded-xl p-12 md:p-8 sm:p-6"
+        style="background-image: url('./images/fun-facts-about-abm-it-support-team-achievements.jpg'); background-size: cover; background-position: center;">
+        <!-- Dark Overlay -->
+        <div class="absolute inset-0 bg-black/60 z-0"></div>
+
+        <div class="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Client Counter -->
+          <div class="text-center">
+            <div class="mb-4 text-white">
+              <i class="fas fa-users text-4xl"></i>
+            </div>
+            <div class="text-white">
+              <h3 class="text-4xl font-bold mb-2">
+                <span class="counter" data-target="300">0</span>+
+              </h3>
+              <p class="text-lg font-medium">Satisfied Clients</p>
+            </div>
+          </div>
+
+          <!-- Projects Counter -->
+          <div class="text-center">
+            <div class="mb-4 text-white">
+              <i class="fas fa-laptop-code text-4xl"></i>
+            </div>
+            <div class="text-white">
+              <h3 class="text-4xl font-bold mb-2">
+                <span class="counter" data-target="300">0</span>+
+              </h3>
+              <p class="text-lg font-medium">Projects Completed</p>
+            </div>
+          </div>
+
+          <!-- Satisfaction Counter -->
+          <div class="text-center">
+            <div class="mb-4 text-white">
+              <i class="fas fa-smile text-4xl"></i>
+            </div>
+            <div class="text-white">
+              <h3 class="text-4xl font-bold mb-2">
+                <span class="counter" data-target="100">0</span>%
+              </h3>
+              <p class="text-lg font-medium">Satisfaction Rate</p>
+            </div>
+          </div>
+
+          <!-- Support Counter -->
+          <div class="text-center">
+            <div class="mb-4 text-white">
+              <i class="fas fa-headset text-4xl"></i>
+            </div>
+            <div class="text-white">
+              <h3 class="text-4xl font-bold mb-2">
+                <span class="counter" data-target="24">0</span>/7
+              </h3>
+              <p class="text-lg font-medium">Support</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<footer class="relative overflow-hidden text-white">
+  <!-- Full Background Image with Overlay -->
+  <div class="absolute inset-0 z-0">
+    <img src="./images/footer-images/footer-background-gradient-digital-tech-theme.png" 
+         alt="footer background" 
+         class="w-full h-full object-cover">
+    <div class="absolute inset-0 bg-blue-900/30"></div> 
+  </div>
+
+  <!-- Content Container -->
+  <div class="relative z-10">
+    <!-- Call to Action Section -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="text-center max-w-3xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Transform Your Digital Presence?</h2>
+          <p class="text-lg text-blue-200 mb-8">Let's build something amazing together</p>
+          <div class="flex flex-wrap justify-center gap-4">
+            <a href="service.html" class="bg-white text-blue-700 hover:bg-blue-50 px-6 py-3 rounded-lg font-medium transition-all duration-300 flex items-center">
+              Explore Our Services <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+            <a href="contact.html" class="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-6 py-3 rounded-lg font-medium transition-all duration-300 flex items-center">
+              Get Free Consultation <i class="fas fa-phone-alt ml-2"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Footer Content -->
+    <section class="py-12 border-t border-blue-800/30">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Company Info Column -->
+          <div class="lg:col-span-2">
+            <div class="mb-8">
+              <a href="index.html" class="inline-block mb-6">
+                <img src="./images/abm-it-support-white-logo.png" alt="ABM IT Support" class="h-12">
+              </a>
+              <p class="text-blue-200 mb-6">
+                Your trusted partner for comprehensive IT solutions and digital services.
+                We help businesses grow through innovative technology solutions.
+              </p>
+
+              <div class="space-y-3 mb-6">
+                <div class="flex items-center">
+                  <i class="fas fa-phone-alt text-blue-300 mr-3"></i>
+                  <a href="tel:+918012626111" class="hover:text-blue-300">+91 80126 26111</a>
+                </div>
+                <div class="flex items-center">
+                  <i class="fas fa-envelope text-blue-300 mr-3"></i>
+                  <a href="mailto:info@abmitsupport.com" class="hover:text-blue-300">info@abmitsupport.com</a>
+                </div>
+              </div>
+
+              <div>
+                <h5 class="text-lg font-medium mb-4">Follow Us</h5>
+                <div class="flex space-x-4">
+                  <a href="https://www.facebook.com/abmitsupport" target="_blank" class="w-10 h-10 rounded-full bg-blue-800 hover:bg-blue-700 flex items-center justify-center">
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                  <a href="https://x.com/abmitsupport" target="_blank" class="w-10 h-10 rounded-full bg-blue-800 hover:bg-blue-700 flex items-center justify-center">
+                    <i class="fab fa-x-twitter"></i>
+                  </a>
+                  <a href="https://www.linkedin.com/company/abmitsupport/" target="_blank" class="w-10 h-10 rounded-full bg-blue-800 hover:bg-blue-700 flex items-center justify-center">
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
+                  <a href="https://www.instagram.com/abmitsupport/" target="_blank" class="w-10 h-10 rounded-full bg-blue-800 hover:bg-blue-700 flex items-center justify-center">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                  <a href="https://www.youtube.com/@abmitsupport" target="_blank" class="w-10 h-10 rounded-full bg-blue-800 hover:bg-blue-700 flex items-center justify-center">
+                    <i class="fab fa-youtube"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Links Column -->
+          <div>
+            <h3 class="text-xl font-bold mb-6">Quick Links</h3>
+            <ul class="space-y-3">
+              <li><a href="index.html" class="flex items-center hover:text-blue-300"><i class="fas fa-chevron-right text-xs mr-2"></i> Home</a></li>
+              <li><a href="about.html" class="flex items-center hover:text-blue-300"><i class="fas fa-chevron-right text-xs mr-2"></i> About Us</a></li>
+              <li><a href="service.html" class="flex items-center hover:text-blue-300"><i class="fas fa-chevron-right text-xs mr-2"></i> Services</a></li>
+              <li><a href="service-courses.html" class="flex items-center hover:text-blue-300"><i class="fas fa-chevron-right text-xs mr-2"></i> Courses</a></li>
+              <li><a href="service-internship.html" class="flex items-center hover:text-blue-300"><i class="fas fa-chevron-right text-xs mr-2"></i> Internships</a></li>
+              <li><a href="contact.html" class="flex items-center hover:text-blue-300"><i class="fas fa-chevron-right text-xs mr-2"></i> Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Column -->
+          <div>
+            <h3 class="text-xl font-bold mb-6">Contact Info</h3>
+            <div class="space-y-4">
+              <div class="flex">
+                <i class="fas fa-map-marker-alt text-blue-300 mt-1 mr-3"></i>
+                <address class="not-italic">
+                  No 27, 2nd Floor, ARCT Complex,<br>
+                  Tamilnadu Papers Upstairs,<br>
+                  Sathiyamoorthy Road,<br>
+                  Santhanathapuram,<br>
+                  Pudukkottai, Tamil Nadu 622001
+                </address>
+              </div>
+              <div class="flex">
+                <i class="fas fa-phone-alt text-blue-300 mt-1 mr-3"></i>
+                <div class="space-y-1">
+                  <a href="tel:+918012626111" class="block hover:text-blue-300">+91 80126 26111</a>
+                  <a href="tel:+918012626222" class="block hover:text-blue-300">+91 80126 26122</a>
+                  <a href="tel:+918012626444" class="block hover:text-blue-300">+91 80126 26144</a>
+                </div>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-envelope text-blue-300 mr-3"></i>
+                <a href="mailto:info@abmitsupport.com" class="hover:text-blue-300">info@abmitsupport.com</a>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-clock text-blue-300 mr-3"></i>
+                <span>Mon-Sat: 9:00 AM - 8:00 PM</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Bottom -->
+    <section class="py-6 border-t border-blue-800/30">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-4 md:mb-0">
+            <p>&copy; 2025 ABM IT SUPPORT (Pvt) Ltd. All Rights Reserved</p>
+          </div>
+          <div class="flex space-x-6">
+            <a href="#" class="hover:text-blue-300">Privacy Policy</a>
+            <a href="#" class="hover:text-blue-300">Terms of Service</a>
+            <a href="#" class="hover:text-blue-300">Sitemap</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</footer>
+<!-- Add this right before your closing </body> tag -->
+<div class="fixed bottom-8 right-8 z-50">
+  <!-- Combined Progress Circle with Arrow -->
+  <button id="goToTopBtn" class="relative w-12 h-12 transition-all duration-300 opacity-0 invisible">
+    <svg class="w-full h-full" viewBox="0 0 36 36">
+      <!-- Background Circle -->
+      <circle cx="18" cy="18" r="16" fill="none" class="stroke-blue-200 stroke-2" stroke-dasharray="100" stroke-dashoffset="0"></circle>
+      <!-- Progress Circle -->
+      <circle cx="18" cy="18" r="16" fill="none" class="stroke-blue-600 stroke-2 progress-circle" 
+              stroke-dasharray="100" stroke-dashoffset="100" transform="rotate(-90 18 18)"></circle>
+      <!-- Arrow Icon -->
+      <text x="18" y="22" text-anchor="middle" class="fill-blue-600 text-xs font-bold" font-size="12">↑</text>
+    </svg>
+  </button>
+</div>
+
+<style>
+  /* Add this to your existing style section */
+  .progress-circle {
+    transition: stroke-dashoffset 0.3s ease;
+  }
+  #goToTopBtn {
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  }
+  #goToTopBtn.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  #goToTopBtn:hover {
+    transform: translateY(-3px) scale(1.05);
+  }
+  #goToTopBtn:hover circle.stroke-blue-600 {
+    stroke: #1d4ed8; /* darker blue on hover */
+  }
+  #goToTopBtn:hover text {
+    fill: #1d4ed8; /* darker blue on hover */
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const goToTopBtn = document.getElementById('goToTopBtn');
+    const progressCircle = document.querySelector('.progress-circle');
+    
+    window.addEventListener('scroll', function() {
+      const scrollTotal = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollProgress = (window.scrollY / scrollTotal) * 100;
+      const dashOffset = 100 - scrollProgress;
+      
+      // Update progress circle
+      progressCircle.style.strokeDashoffset = dashOffset;
+      
+      // Show/hide button
+      if (window.scrollY > 300) {
+        goToTopBtn.classList.add('visible');
+        goToTopBtn.classList.remove('opacity-0', 'invisible');
+      } else {
+        goToTopBtn.classList.remove('visible');
+        goToTopBtn.classList.add('opacity-0', 'invisible');
+      }
+    });
+    
+    // Scroll to top when clicked
+    goToTopBtn.addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  });
+</script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    // Initialize Swiper
+    const swiper = new Swiper('.mySwiper', {
+      loop: true,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      effect: 'fade',
+      fadeEffect: {
+        crossFade: true
+      },
+    });
+
+    // Mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const servicesToggle = document.getElementById('services-toggle');
+    const servicesDropdown = document.getElementById('services-dropdown');
+
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    servicesToggle.addEventListener('click', () => {
+      servicesDropdown.classList.toggle('hidden');
+      const icon = servicesToggle.querySelector('i');
+      icon.classList.toggle('fa-chevron-down');
+      icon.classList.toggle('fa-chevron-up');
+    });
+
+    // Improved Tab Functionality
+    document.querySelectorAll('.tab-button').forEach(button => {
+      button.addEventListener('click', () => {
+        const targetId = button.getAttribute('data-target');
+
+        // Remove active class from all buttons
+        document.querySelectorAll('.tab-button').forEach(btn => {
+          btn.classList.remove('active', 'border-blue-600', 'text-blue-600');
+          btn.classList.add('border-transparent', 'text-gray-500');
+        });
+
+        // Hide all panes
+        document.querySelectorAll('.tab-pane').forEach(pane => {
+          pane.classList.add('hidden');
+        });
+
+        // Activate clicked button
+        button.classList.add('active', 'border-blue-600', 'text-blue-600');
+        button.classList.remove('border-transparent', 'text-gray-500');
+
+        // Show target pane
+        document.getElementById(targetId).classList.remove('hidden');
+      });
+    });
+    const toggleBtn = document.getElementById('toggleServicesBtn');
+    const btnText = document.getElementById('btnText');
+    const btnIcon = document.getElementById('btnIcon');
+    const moreServices = document.getElementById('moreServices');
+
+    toggleBtn.addEventListener('click', function () {
+      moreServices.classList.toggle('show');
+
+      if (moreServices.classList.contains('show')) {
+        btnText.textContent = 'Show Less Services';
+        btnIcon.classList.remove('fa-chevron-down');
+        btnIcon.classList.add('fa-chevron-up');
+      } else {
+        btnText.textContent = 'Load More Services';
+        btnIcon.classList.remove('fa-chevron-up');
+        btnIcon.classList.add('fa-chevron-down');
+      }
+    });
+    // Tab Switching
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(button => {
+      button.addEventListener('click', function () {
+        const tabId = this.getAttribute('data-tab');
+
+        // Update active tab button
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        this.classList.add('active');
+
+        // Show corresponding content
+        tabContents.forEach(content => {
+          content.classList.add('hidden');
+          if (content.id === `${tabId}-content`) {
+            content.classList.remove('hidden');
+          }
+        });
+      });
+    });
+    // Accordion functionality
+    document.querySelectorAll('.question').forEach(question => {
+      question.addEventListener('click', () => {
+        const accordion = question.parentElement;
+        accordion.classList.toggle('active');
+
+        // Close other accordions when opening one
+        if (accordion.classList.contains('active')) {
+          document.querySelectorAll('.accordion').forEach(item => {
+            if (item !== accordion) {
+              item.classList.remove('active');
+            }
+          });
+        }
+      });
+    });
+    document.addEventListener('DOMContentLoaded', () => {
+      const counters = document.querySelectorAll('.counter');
+      const animationDuration = 3000; // 3 seconds for all counters to complete
+      let animationStarted = false;
+
+      const animateCounters = () => {
+        if (animationStarted) return;
+        animationStarted = true;
+
+        const startTime = Date.now();
+
+        const updateCounters = () => {
+          const elapsed = Date.now() - startTime;
+          const progress = Math.min(elapsed / animationDuration, 1);
+
+          counters.forEach(counter => {
+            const target = +counter.getAttribute('data-target');
+            const value = Math.floor(progress * target);
+            counter.innerText = value;
+          });
+
+          if (progress < 1) {
+            requestAnimationFrame(updateCounters);
+          }
+        };
+
+        requestAnimationFrame(updateCounters);
+      };
+
+      // Start animation when section is in viewport
+      const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+          animateCounters();
+          observer.unobserve(entries[0].target);
+        }
+      }, { threshold: 0.5 });
+
+      const counterSection = document.querySelector('.relative.z-10.-mb-24');
+      if (counterSection) {
+        observer.observe(counterSection);
+      }
+    });
+  </script>
+</body>
+
+</html>
