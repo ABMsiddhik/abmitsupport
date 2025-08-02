@@ -12,12 +12,21 @@
   <title>ABM IT Support | Web Design & IT Services in Pudukkottai</title>
   <link rel="canonical" href="https://www.abmitsupport.com/" />
 
+  <!-- Preload critical resources -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style">
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" as="style">
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" as="script">
+  
+  <!-- Preload hero images -->
+  <link rel="preload" href="./images/it-solutions-services-abm-it-support.webp" as="image">
+  <link rel="preload" href="./images/web-development-services-abm-it-support.webp" as="image">
+  <link rel="preload" href="./images/digital-marketing-agency-abm-it-support.webp" as="image">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="shortcut icon" href="./images/favicon.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Swiper CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
@@ -28,6 +37,13 @@
     .swiper {
       width: 100%;
       height: 100%;
+    }
+
+    .swiper-slide {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
     }
 
     .swiper-slide-overlay {
@@ -78,6 +94,24 @@
       background: #2563eb;
       opacity: 1;
       transform: scale(1.2);
+    }
+
+    .swiper-lazy-preloader {
+      border-color: #2563eb;
+      border-top-color: transparent;
+    }
+
+    .image-loading {
+      position: absolute;
+      inset: 0;
+      background-color: #f3f4f6;
+      opacity: 1;
+      transition: opacity 0.3s ease;
+      z-index: 1;
+    }
+
+    .swiper-slide-visible .image-loading {
+      opacity: 0.5;
     }
 
     .nav-link {
@@ -255,6 +289,28 @@
       border-left: 3px solid #3b82f6;
     }
 
+    /* Progress circle styles */
+    .progress-circle {
+      transition: stroke-dashoffset 0.3s ease;
+    }
+    #goToTopBtn {
+      transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+    }
+    #goToTopBtn.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    #goToTopBtn:hover {
+      transform: translateY(-3px) scale(1.05);
+    }
+    #goToTopBtn:hover circle.stroke-blue-600 {
+      stroke: #1d4ed8;
+    }
+    #goToTopBtn:hover text {
+      fill: #1d4ed8;
+    }
+
     @media (max-width: 768px) {
       .hero-section {
         height: 400px;
@@ -302,7 +358,7 @@
     class="hidden md:flex bg-blue-900 text-white text-base px-6 py-3 flex justify-between items-center flex-wrap top-bar">
     <div class="flex items-center space-x-6">
       <span><i class="far fa-clock mr-2"></i> Working Hours: Mon – Sat, 9am – 8pm</span>
-      <a href="tel:+918012626111" class="text-cyan-300 font-medium hover:underline">
+      <a href="tel:+918012626111" class=" font-medium ">
         <i class="fas fa-phone-alt mr-2"></i> +91 8012626111
       </a>
     </div>
@@ -337,7 +393,7 @@
     <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
       <!-- Logo -->
       <div class="flex items-center space-x-3">
-        <img src="./images/abm-it-support-dark-logo.png" alt="ABM IT Support Logo" class="h-12">
+        <img src="./images/abm-it-support-dark-logo.png" alt="ABM IT Support Logo" class="h-12" loading="lazy">
       </div>
 
       <!-- Mobile Menu Button -->
@@ -415,8 +471,9 @@
       <div class="swiper-wrapper">
 
         <!-- Slide 1 - IT Solutions -->
-        <div class="swiper-slide relative bg-cover bg-center flex items-center justify-center md:justify-start"
-          style="background-image: url('./images/it-solutions-services-abm-it-support.png');">
+        <div class="swiper-slide relative flex items-center justify-center md:justify-start"
+          data-background="./images/it-solutions-services-abm-it-support.webp">
+          <div class="image-loading"></div>
           <div class="swiper-slide-overlay absolute inset-0"></div>
           <div
             class="slide-content bg-blue-600 text-white p-8 rounded-2xl mx-4 md:m-6 w-full md:w-1/2 lg:w-1/3 max-w-md shadow-lg z-10">
@@ -431,8 +488,9 @@
         </div>
 
         <!-- Slide 2 - Web Development -->
-        <div class="swiper-slide relative bg-cover bg-center flex items-center justify-center md:justify-start"
-          style="background-image: url('./images/web-development-services-abm-it-support.jpg');">
+        <div class="swiper-slide relative flex items-center justify-center md:justify-start"
+          data-background="./images/web-development-services-abm-it-support.webp">
+          <div class="image-loading"></div>
           <div class="swiper-slide-overlay absolute inset-0"></div>
           <div
             class="slide-content bg-blue-600 text-white p-8 rounded-2xl mx-4 md:m-6 w-full md:w-1/2 lg:w-1/3 max-w-md shadow-lg z-10">
@@ -447,8 +505,9 @@
         </div>
 
         <!-- Slide 3 - Digital Marketing -->
-        <div class="swiper-slide relative bg-cover bg-center flex items-center justify-center md:justify-start"
-          style="background-image: url('./images/digital-marketing-agency-abm-it-support.jpg');">
+        <div class="swiper-slide relative flex items-center justify-center md:justify-start"
+          data-background="./images/digital-marketing-agency-abm-it-support.webp">
+          <div class="image-loading"></div>
           <div class="swiper-slide-overlay absolute inset-0"></div>
           <div
             class="slide-content bg-blue-600 text-white p-8 rounded-2xl mx-4 md:m-6 w-full md:w-1/2 lg:w-1/3 max-w-md shadow-lg z-10">
@@ -463,8 +522,9 @@
         </div>
 
         <!-- Slide 4 - App Development -->
-        <div class="swiper-slide relative bg-cover bg-center flex items-center justify-center md:justify-start"
-          style="background-image: url('./images/app-development-services-abm-it-support.jpg');">
+        <div class="swiper-slide relative flex items-center justify-center md:justify-start"
+          data-background="./images/app-development-services-abm-it-support.webp">
+          <div class="image-loading"></div>
           <div class="swiper-slide-overlay absolute inset-0"></div>
           <div
             class="slide-content bg-blue-600 text-white p-8 rounded-2xl mx-4 md:m-6 w-full md:w-1/2 lg:w-1/3 max-w-md shadow-lg z-10">
@@ -477,8 +537,9 @@
         </div>
 
         <!-- Slide 5 - SMS/WhatsApp -->
-        <div class="swiper-slide relative bg-cover bg-center flex items-center justify-center md:justify-start"
-          style="background-image: url('./images/sms-whatsapp-marketing-abm-it-support.jpg');">
+        <div class="swiper-slide relative flex items-center justify-center md:justify-start"
+          data-background="./images/sms-whatsapp-marketing-abm-it-support.webp">
+          <div class="image-loading"></div>
           <div class="swiper-slide-overlay absolute inset-0"></div>
           <div
             class="slide-content bg-blue-600 text-white p-8 rounded-2xl mx-4 md:m-6 w-full md:w-1/2 lg:w-1/3 max-w-md shadow-lg z-10">
@@ -529,9 +590,9 @@
         <div
           class="group relative bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
           <div class="relative h-56 overflow-hidden">
-            <img src="./images/abm-complete-it-infrastructure.jpg"
+            <img src="./images/abm-complete-it-infrastructure.webp"
               alt="Complete IT Infrastructure Services including web hosting, domain registration, and CMS solutions"
-              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
             <div class="absolute top-4 right-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">15+
               Services</div>
             <div
@@ -572,9 +633,9 @@
         <div
           class="group relative bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
           <div class="relative h-56 overflow-hidden">
-            <img src="./images/abm-digital-growth-solutions.jpg"
+            <img src="./images/abm-digital-growth-solutions.webp"
               alt="Digital Growth Solutions including web development, design, and marketing services"
-              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
             <div class="absolute top-4 right-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">10+
               Services</div>
             <div
@@ -615,9 +676,9 @@
         <div
           class="group relative bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
           <div class="relative h-56 overflow-hidden">
-            <img src="./images/abm-smart-communication-tech.jpg"
+            <img src="./images/abm-smart-communication-tech.webp"
               alt="Smart Communication Technology including app development and messaging services"
-              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
             <div class="absolute top-4 right-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">5+
               Services</div>
             <div
@@ -659,14 +720,14 @@
 
   <!-- About Section -->
   <section class="relative py-16 bg-cover bg-center bg-no-repeat"
-    style="background-image: url('./images/abm-about-section-technology-background.jpg');">
+    style="background-image: url('./images/abm-about-section-technology-background.webp');">
     <div class="absolute inset-0 bg-white/50 backdrop-blur-sm z-0"></div>
 
     <div class="container mx-auto px-4 relative z-10">
-      <div class="flex flex-col lg:flex-row items-start">
+      <div class="flex flex-col lg:flex-row items-start gap-8">
         <!-- Image Column -->
         <div class="lg:w-5/12 mb-8 lg:mb-0 lg:pr-8">
-          <img src="./images/abm-it-support-ceo.png" class="w-full rounded-lg shadow-md" alt="About ABM IT Support">
+          <img src="./images/abm-it-support-ceo.webp" class="w-full rounded-lg shadow-md" alt="About ABM IT Support" loading="lazy">
         </div>
 
         <!-- Content Column -->
@@ -810,16 +871,11 @@
         </div>
       </div>
     </div>
-
-
   </section>
 
   <!-- Services Section -->
   <section class="relative py-16 bg-blue-900 overflow-hidden">
-    <!-- Wave Pattern Background -->
-    <div class="absolute top-0 left-0 -mt-10 opacity-20 z-0">
-      <img src="./images/top-wave-pattern-it-services-section.png" class="w-full max-w-xs" alt="wave pattern">
-    </div>
+
 
     <div class="container mx-auto px-4 relative z-10">
       <!-- Section Header -->
@@ -965,10 +1021,7 @@
       </div>
     </div>
 
-    <!-- Wave Pattern Bottom -->
-    <div class="absolute bottom-0 right-0 -mb-40 opacity-20 z-0">
-      <img src="assets/images/shape/wave-pattern-1.png" class="w-full max-w-xs" alt="wave pattern">
-    </div>
+
   </section>
   <!-- FAQ Section -->
   <section class="py-16">
@@ -1045,8 +1098,8 @@
         <div class="lg:w-1/2">
           <!-- Main Image -->
           <div class="relative mb-6 rounded-xl overflow-hidden shadow-lg">
-            <img src="./images/abm-digital-marketing-analytics.jpg" alt="Digital Marketing"
-              class="w-full h-auto rounded-xl transition-transform duration-500 hover:scale-105">
+            <img src="./images/abm-digital-marketing-analytics.webp" alt="Digital Marketing"
+              class="w-full h-auto rounded-xl transition-transform duration-500 hover:scale-105" loading="lazy">
             <div class="image-badge">
               <i class="fas fa-chart-line me-2"></i> Digital Solutions
             </div>
@@ -1056,8 +1109,8 @@
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <!-- Team Image -->
             <div class="relative rounded-xl overflow-hidden shadow-md image-one-wrapper">
-              <img src="./images/abm-it-team-collaboration.jpg" alt="Our Team"
-                class="w-full h-full object-cover rounded-xl transition-transform duration-500 hover:scale-105">
+              <img src="./images/abm-it-team-collaboration.webp" alt="Our Team"
+                class="w-full h-full object-cover rounded-xl transition-transform duration-500 hover:scale-105" loading="lazy">
               <div class="image-overlay">
                 <div class="absolute inset-0 flex flex-col items-center justify-center">
                   <i class="fas fa-users overlay-icon text-2xl mb-2"></i>
@@ -1068,8 +1121,8 @@
 
             <!-- Code Image -->
             <div class="relative rounded-xl overflow-hidden shadow-md image-two-wrapper">
-              <img src="./images/abm-web-development-coding.jpg" alt="Web Development"
-                class="w-full h-full object-cover rounded-xl transition-transform duration-500 hover:scale-105">
+              <img src="./images/abm-web-development-coding.webp" alt="Web Development"
+                class="w-full h-full object-cover rounded-xl transition-transform duration-500 hover:scale-105" loading="lazy">
               <div class="image-overlay">
                 <div class="absolute inset-0 flex flex-col items-center justify-center">
                   <i class="fas fa-code overlay-icon text-2xl mb-2"></i>
@@ -1085,7 +1138,7 @@
   <section class="py-16 relative z-10 -mb-24">
     <div class="max-w-6xl mx-auto px-4">
       <div class="relative overflow-hidden rounded-xl p-12 md:p-8 sm:p-6"
-        style="background-image: url('./images/fun-facts-about-abm-it-support-team-achievements.jpg'); background-size: cover; background-position: center;">
+        style="background-image: url('./images/fun-facts-about-abm-it-support-team-achievements.webp'); background-size: cover; background-position: center;">
         <!-- Dark Overlay -->
         <div class="absolute inset-0 bg-black/60 z-0"></div>
 
@@ -1148,9 +1201,9 @@
 <footer class="relative overflow-hidden text-white">
   <!-- Full Background Image with Overlay -->
   <div class="absolute inset-0 z-0">
-    <img src="./images/footer-images/footer-background-gradient-digital-tech-theme.png" 
+    <img src="./images/footer-images/footer-background-gradient-digital-tech-theme.webp" 
          alt="footer background" 
-         class="w-full h-full object-cover">
+         class="w-full h-full object-cover" loading="lazy">
     <div class="absolute inset-0 bg-blue-900/30"></div> 
   </div>
 
@@ -1182,7 +1235,7 @@
           <div class="lg:col-span-2">
             <div class="mb-8">
               <a href="index.html" class="inline-block mb-6">
-                <img src="./images/abm-it-support-white-logo.png" alt="ABM IT Support" class="h-12">
+                <img src="./images/abm-it-support-white-logo.png" alt="ABM IT Support" class="h-12" loading="lazy">
               </a>
               <p class="text-blue-200 mb-6">
                 Your trusted partner for comprehensive IT solutions and digital services.
@@ -1279,15 +1332,31 @@
           <div class="mb-4 md:mb-0">
             <p>&copy; 2025 ABM IT SUPPORT (Pvt) Ltd. All Rights Reserved</p>
           </div>
+       
         </div>
       </div>
     </section>
   </div>
 </footer>
 
+<!-- Scroll to Top Button with Progress Indicator -->
+<div class="fixed bottom-8 right-8 z-50">
+  <button id="goToTopBtn" class="relative w-12 h-12 transition-all duration-300 opacity-0 invisible">
+    <svg class="w-full h-full" viewBox="0 0 36 36">
+      <!-- Background Circle -->
+      <circle cx="18" cy="18" r="16" fill="none" class="stroke-blue-200 stroke-2" stroke-dasharray="100" stroke-dashoffset="0"></circle>
+      <!-- Progress Circle -->
+      <circle cx="18" cy="18" r="16" fill="none" class="stroke-blue-600 stroke-2 progress-circle" 
+              stroke-dasharray="100" stroke-dashoffset="100" transform="rotate(-90 18 18)"></circle>
+      <!-- Arrow Icon (centered) -->
+      <text x="18" y="22" text-anchor="middle" class="fill-blue-600 text-xs font-bold" font-size="12">↑</text>
+    </svg>
+  </button>
+</div>
+
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
-    // Initialize Swiper
+    // Initialize Swiper with lazy loading
     const swiper = new Swiper('.mySwiper', {
       loop: true,
       autoplay: {
@@ -1306,6 +1375,38 @@
       fadeEffect: {
         crossFade: true
       },
+      lazy: {
+        enabled: true,
+        loadPrevNext: true,
+        loadPrevNextAmount: 2,
+        loadOnTransitionStart: true,
+      },
+      preloadImages: false,
+      watchSlidesProgress: true,
+      on: {
+        init: function() {
+          // Load first slide immediately
+          const firstSlide = this.slides[0];
+          const bgUrl = firstSlide.getAttribute('data-background');
+          firstSlide.style.backgroundImage = `url(${bgUrl})`;
+          firstSlide.querySelector('.image-loading').remove();
+        },
+        slideChangeTransitionStart: function() {
+          // Preload adjacent slides
+          const nextIndex = (this.activeIndex + 1) % this.slides.length;
+          const nextSlide = this.slides[nextIndex];
+          const bgUrl = nextSlide.getAttribute('data-background');
+          
+          if (!nextSlide.style.backgroundImage) {
+            const img = new Image();
+            img.src = bgUrl;
+            img.onload = function() {
+              nextSlide.style.backgroundImage = `url(${bgUrl})`;
+              nextSlide.querySelector('.image-loading').remove();
+            };
+          }
+        }
+      }
     });
 
     // Mobile menu toggle
@@ -1325,54 +1426,12 @@
       icon.classList.toggle('fa-chevron-up');
     });
 
-    // Improved Tab Functionality
-    document.querySelectorAll('.tab-button').forEach(button => {
-      button.addEventListener('click', () => {
-        const targetId = button.getAttribute('data-target');
-
-        // Remove active class from all buttons
-        document.querySelectorAll('.tab-button').forEach(btn => {
-          btn.classList.remove('active', 'border-blue-600', 'text-blue-600');
-          btn.classList.add('border-transparent', 'text-gray-500');
-        });
-
-        // Hide all panes
-        document.querySelectorAll('.tab-pane').forEach(pane => {
-          pane.classList.add('hidden');
-        });
-
-        // Activate clicked button
-        button.classList.add('active', 'border-blue-600', 'text-blue-600');
-        button.classList.remove('border-transparent', 'text-gray-500');
-
-        // Show target pane
-        document.getElementById(targetId).classList.remove('hidden');
-      });
-    });
-    const toggleBtn = document.getElementById('toggleServicesBtn');
-    const btnText = document.getElementById('btnText');
-    const btnIcon = document.getElementById('btnIcon');
-    const moreServices = document.getElementById('moreServices');
-
-    toggleBtn.addEventListener('click', function () {
-      moreServices.classList.toggle('show');
-
-      if (moreServices.classList.contains('show')) {
-        btnText.textContent = 'Show Less Services';
-        btnIcon.classList.remove('fa-chevron-down');
-        btnIcon.classList.add('fa-chevron-up');
-      } else {
-        btnText.textContent = 'Load More Services';
-        btnIcon.classList.remove('fa-chevron-up');
-        btnIcon.classList.add('fa-chevron-down');
-      }
-    });
     // Tab Switching
     const tabButtons = document.querySelectorAll('.tab-button');
     const tabContents = document.querySelectorAll('.tab-content');
 
     tabButtons.forEach(button => {
-      button.addEventListener('click', function () {
+      button.addEventListener('click', function() {
         const tabId = this.getAttribute('data-tab');
 
         // Update active tab button
@@ -1388,6 +1447,27 @@
         });
       });
     });
+
+    // Show More/Less Services
+    const toggleBtn = document.getElementById('toggleServicesBtn');
+    const btnText = document.getElementById('btnText');
+    const btnIcon = document.getElementById('btnIcon');
+    const moreServices = document.getElementById('moreServices');
+
+    toggleBtn.addEventListener('click', function() {
+      moreServices.classList.toggle('show');
+
+      if (moreServices.classList.contains('show')) {
+        btnText.textContent = 'Show Less Services';
+        btnIcon.classList.remove('fa-chevron-down');
+        btnIcon.classList.add('fa-chevron-up');
+      } else {
+        btnText.textContent = 'Load More Services';
+        btnIcon.classList.remove('fa-chevron-up');
+        btnIcon.classList.add('fa-chevron-down');
+      }
+    });
+
     // Accordion functionality
     document.querySelectorAll('.question').forEach(question => {
       question.addEventListener('click', () => {
@@ -1404,6 +1484,8 @@
         }
       });
     });
+
+    // Counter Animation
     document.addEventListener('DOMContentLoaded', () => {
       const counters = document.querySelectorAll('.counter');
       const animationDuration = 3000; // 3 seconds for all counters to complete
@@ -1446,7 +1528,69 @@
         observer.observe(counterSection);
       }
     });
+
+    // Scroll to Top Button with Progress
+ document.addEventListener('DOMContentLoaded', function() {
+    const goToTopBtn = document.getElementById('goToTopBtn');
+    const progressCircle = document.querySelector('.progress-circle');
+    
+    window.addEventListener('scroll', function() {
+      const scrollTotal = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollProgress = (window.scrollY / scrollTotal) * 100;
+      const dashOffset = 100 - scrollProgress;
+      
+      // Update progress circle only (no percentage text)
+      progressCircle.style.strokeDashoffset = dashOffset;
+      
+      // Show/hide button
+      if (window.scrollY > 300) {
+        goToTopBtn.classList.add('visible');
+        goToTopBtn.classList.remove('opacity-0', 'invisible');
+      } else {
+        goToTopBtn.classList.remove('visible');
+        goToTopBtn.classList.add('opacity-0', 'invisible');
+      }
+    });
+    
+    // Scroll to top when clicked
+    goToTopBtn.addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  });
+    // Lazy load background images for slider
+document.addEventListener('DOMContentLoaded', function() {
+  const lazyBackgrounds = document.querySelectorAll('.swiper-slide[data-background]');
+  
+  const lazyBackgroundObserver = new IntersectionObserver(function(entries, observer) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        const slide = entry.target;
+        const bgUrl = slide.getAttribute('data-background');
+        
+        // Create image object to load in background
+        const img = new Image();
+        img.src = bgUrl;
+        img.onload = function() {
+          slide.style.backgroundImage = `url(${bgUrl})`;
+          // Safely remove loading placeholder if it exists
+          const loadingPlaceholder = slide.querySelector('.image-loading');
+          if (loadingPlaceholder) {
+            loadingPlaceholder.remove();
+          }
+        };
+        
+        observer.unobserve(slide);
+      }
+    });
+  }, {rootMargin: '200px 0px'});
+
+  lazyBackgrounds.forEach(function(lazyBackground) {
+    lazyBackgroundObserver.observe(lazyBackground);
+  });
+});
   </script>
 </body>
-
 </html>
