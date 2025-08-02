@@ -1279,88 +1279,12 @@
           <div class="mb-4 md:mb-0">
             <p>&copy; 2025 ABM IT SUPPORT (Pvt) Ltd. All Rights Reserved</p>
           </div>
-          <div class="flex space-x-6">
-            <a href="#" class="hover:text-blue-300">Privacy Policy</a>
-            <a href="#" class="hover:text-blue-300">Terms of Service</a>
-            <a href="#" class="hover:text-blue-300">Sitemap</a>
-          </div>
         </div>
       </div>
     </section>
   </div>
 </footer>
-<!-- Add this right before your closing </body> tag -->
-<div class="fixed bottom-8 right-8 z-50">
-  <!-- Combined Progress Circle with Arrow -->
-  <button id="goToTopBtn" class="relative w-12 h-12 transition-all duration-300 opacity-0 invisible">
-    <svg class="w-full h-full" viewBox="0 0 36 36">
-      <!-- Background Circle -->
-      <circle cx="18" cy="18" r="16" fill="none" class="stroke-blue-200 stroke-2" stroke-dasharray="100" stroke-dashoffset="0"></circle>
-      <!-- Progress Circle -->
-      <circle cx="18" cy="18" r="16" fill="none" class="stroke-blue-600 stroke-2 progress-circle" 
-              stroke-dasharray="100" stroke-dashoffset="100" transform="rotate(-90 18 18)"></circle>
-      <!-- Arrow Icon -->
-      <text x="18" y="22" text-anchor="middle" class="fill-blue-600 text-xs font-bold" font-size="12">↑</text>
-    </svg>
-  </button>
-</div>
 
-<style>
-  /* Add this to your existing style section */
-  .progress-circle {
-    transition: stroke-dashoffset 0.3s ease;
-  }
-  #goToTopBtn {
-    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
-  }
-  #goToTopBtn.visible {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-  }
-  #goToTopBtn:hover {
-    transform: translateY(-3px) scale(1.05);
-  }
-  #goToTopBtn:hover circle.stroke-blue-600 {
-    stroke: #1d4ed8; /* darker blue on hover */
-  }
-  #goToTopBtn:hover text {
-    fill: #1d4ed8; /* darker blue on hover */
-  }
-</style>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const goToTopBtn = document.getElementById('goToTopBtn');
-    const progressCircle = document.querySelector('.progress-circle');
-    
-    window.addEventListener('scroll', function() {
-      const scrollTotal = document.documentElement.scrollHeight - window.innerHeight;
-      const scrollProgress = (window.scrollY / scrollTotal) * 100;
-      const dashOffset = 100 - scrollProgress;
-      
-      // Update progress circle
-      progressCircle.style.strokeDashoffset = dashOffset;
-      
-      // Show/hide button
-      if (window.scrollY > 300) {
-        goToTopBtn.classList.add('visible');
-        goToTopBtn.classList.remove('opacity-0', 'invisible');
-      } else {
-        goToTopBtn.classList.remove('visible');
-        goToTopBtn.classList.add('opacity-0', 'invisible');
-      }
-    });
-    
-    // Scroll to top when clicked
-    goToTopBtn.addEventListener('click', function() {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    });
-  });
-</script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
     // Initialize Swiper
